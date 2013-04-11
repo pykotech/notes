@@ -1,0 +1,50 @@
+% Co-expression Networks
+% [Keith Hughitt](khughitt@umd.edu)
+% 2013/04/011
+
+Overview
+========
+Going through some of the co-expression network papers and putting together
+notes... Will have to think a little more about how much time I want to put
+in to producing these notes.
+
+Scale-free networks
+===================
+Many biological networks (including co-expression networks) are thought to
+follow a [power law distribution](https://en.wikipedia.org/wiki/Power_law)^1.
+
+For co-expression networks with genes as nodes, the degree distribution $p(k)$
+for genes follows:
+
+$$
+p(k) \sim k^{-\gamma}
+$$
+
+where $k$ is the number of connections to other genes.
+
+The exponent $\gamma$ determines how quickly the distribution decays,
+for example:
+
+### $\gamma = 3$
+
+```r
+k = seq(1, 10, by = 0.1)
+plot(k, k^-2, type = "l")
+```
+
+![plot of chunk powerlaw_plot1](figure/powerlaw_plot1.png) 
+
+
+### $\gamma = 10$
+
+```r
+plot(k, k^-10, type = "l")
+```
+
+![plot of chunk powerlaw_plot2](figure/powerlaw_plot2.png) 
+
+
+
+References
+==========
+1. Bin Zhang, Steve Horvath,   (2005) A General Framework For Weighted Gene co-Expression Network Analysis.  *Statistical Applications in Genetics And Molecular Biology*  **4**  [10.2202/1544-6115.1128](http://dx.doi.org/10.2202/1544-6115.1128)>
