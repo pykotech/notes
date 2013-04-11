@@ -1,0 +1,34 @@
+% Network visualization with igraph
+% [Keith Hughitt](khughitt@umd.edu)
+% 2013/04/11
+
+Overview
+========
+Just playing around with [igraph](http://igraph.sourceforge.net/).
+
+1. Creating an adjacency matrix
+===============================
+First, let's try plotting a few different adjaceny matrices. To do so, you can
+simply use the `graph.adjaceny` function.
+
+```{r adjacency_matrix}
+library(igraph)
+
+# Identity matrix (not the most exciting network...)
+x = diag(4)
+x
+plot(graph.adjacency(x))
+
+# two nodes that are completely connected and two with zero connectivity
+y = matrix(rep(c(0,1), 8), 4, 4)
+y
+plot(graph.adjacency(y))
+
+# a random network
+set.seed(1)
+z <- matrix(sample(0:1, 16, replace=T), 4, 4)
+z
+plot(graph.adjacency(z))
+```
+
+

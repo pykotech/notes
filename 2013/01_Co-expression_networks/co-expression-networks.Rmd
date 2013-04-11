@@ -1,6 +1,6 @@
 % Co-expression Networks
 % [Keith Hughitt](khughitt@umd.edu)
-% 2013/04/011
+% 2013/04/11
 
 Overview
 ========
