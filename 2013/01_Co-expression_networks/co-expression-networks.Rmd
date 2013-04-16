@@ -28,15 +28,17 @@ where $k$ is the number of connections to other genes.
 The exponent $\gamma$ determines how quickly the distribution decays,
 for example:
 
-### $\gamma = 3$
-```{r powerlaw_plot1}
+```{r powerlaw_plot1, fig.width=14, fig.keep='last'}
+layout(t(1:2))
+
+# gamma = 2
 k = seq(1, 10, by=0.1)
 plot(k, k^-2, type='l')
-```
+title('gamma = 2')
 
-### $\gamma = 10$
-```{r powerlaw_plot2}
+# gamma = 10
 plot(k, k^-10, type='l')
+title('gamma = 10')
 ```
 
 Co-expression Network Construction
@@ -71,6 +73,13 @@ a_{ij} = signum(s_{ij}, \tau) \equiv \left\{
 \right.
 $$
 
+Example ($\tau = 0.5$)
+```{r signum_plot}
+x = seq(0, 1, by=0.01)
+y = sign(-0.5 + x)
+plot(x, y, 'l')
+```
+
 This results in an unweighted network.
 
 *** soft-threshold
@@ -93,7 +102,7 @@ y = 1 / (1 + exp(-x))
 plot(x, y, 'l')
 ```
 
-ii. The power function:
+ii. The single-parametered power function:
 
 $$
 a_{ij} = power(s_{ij}, \beta) \equiv |s_{ij}|^\beta
@@ -104,7 +113,6 @@ $$
 ------------------------
 Once an adjacency matrix has been constructed, a measure of dissimilarity
 (distance) can be defined, and this can be used for clustering.
-
 
 
 References
