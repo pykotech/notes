@@ -10,17 +10,17 @@ General
 
 ###List Vim settings
 
- :set            - shows vars different from defaults
- :set all        - shows all values
- :set foo?       - shows the value of foo
+    :set            - shows vars different from defaults
+    :set all        - shows all values
+    :set foo?       - shows the value of foo
 
- http://www.cs.swarthmore.edu/help/vim/variables.html
+  http://www.cs.swarthmore.edu/help/vim/variables.html
 
 ###Split-pane mode
 
- vim -o file1 file2
+    vim -o file1 file2
 
- <Cntl> + w <Up>/<Down> to navigate
+    <Cntl> + w <Up>/<Down> to navigate
 
 ###Buffers
 
@@ -36,7 +36,8 @@ General
 
 ###Registers
 
-    **Copy and paste**
+**Copy and paste**
+
     "*y  copy to primary system clipboard
     "*p  paste from primary system clipboard
 
@@ -45,15 +46,16 @@ General
 
 ###Modes
 
-     http://vimdoc.sourceforge.net/htmldoc/intro.html#vim-modes-intro
+"[+]" in status-line means that changes have been made since last save.
 
-    "[+]" in status-line means that changes have been made since last save.
+**Leave insert mode**
 
-    **Leave insert mode**
-        1. <Escape>
-        2. <cntl> + [
-        3. <cntl> + c
-        4. Alt + normal-mode key (e.g. h,j,k, or l)
+    1. <Escape>
+    2. <cntl> + [
+    3. <cntl> + c
+    4. Alt + normal-mode key (e.g. h,j,k, or l)
+
+  http://vimdoc.sourceforge.net/htmldoc/intro.html#vim-modes-intro
 
 ###Command History
 
@@ -63,13 +65,13 @@ General
     4) Enter to execute
     5) To cancel, press Cntl-c-c
 
-    http://vim.wikia.com/wiki/Using_command-line_history
+  http://vim.wikia.com/wiki/Using_command-line_history
 
 ###Copy and paste
 
-    Make sure vim is compiled with the +xterm_clipboard flag.
+  Make sure vim is compiled with the +xterm_clipboard flag.
 
-    1) Primary
+    1. Primary
 
         COPY  Select with mouse / visual mode
         PASTE Middle-mouse click
@@ -81,7 +83,7 @@ General
             2. enter INSERT mode
             3. shift + insert
 
-    2) Clipboard
+    2. Clipboard
 
         COPY  "+yy
         PASTE "+p
@@ -96,10 +98,10 @@ General
 
 ###Tips
 
-    **Cntl + o** Run one command in normal mode then return to insert mode
-    **Cntl +v <Tab>** Insert normal tab with SuperTab plugin loaded
+  **Cntl + o** Run one command in normal mode then return to insert mode
+  **Cntl +v <Tab>** Insert normal tab with SuperTab plugin loaded
 
-    . repeat last insert mode change
+  . repeat last insert mode change
 
 Navigation
 ----------
