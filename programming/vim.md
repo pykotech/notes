@@ -44,6 +44,23 @@ General
     "+y  copy from selected
     "+p  paste from selected
 
+**Copy text to system clipboard using mouse**
+
+    1. <Shift> + highlight text to copy
+    2. middle-mouse click to paste
+
+**Cut and paste multiple lines**
+
+    d<n>DOWN_ARROW
+    p
+
+**cut/copy and paste (replace existing line)**
+
+    <n>G
+    yy (or dd)
+    <n2>G
+    Vp
+
 ###Modes
 
 "[+]" in status-line means that changes have been made since last save.
@@ -59,11 +76,11 @@ General
 
 ###Command History
 
-    1) "q:" or "q/" to enter command/search history
-    2) Search for query of interest
-    3) Edit it
-    4) Enter to execute
-    5) To cancel, press Cntl-c-c
+1. "q:" or "q/" to enter command/search history
+2. Search for query of interest
+3. Edit it
+4. Enter to execute
+5. To cancel, press Cntl-c-c
 
   http://vim.wikia.com/wiki/Using_command-line_history
 
@@ -96,31 +113,32 @@ General
 
     :help recording
 
-###Tips
+###Misc
 
-  **Cntl + o** Run one command in normal mode then return to insert mode
+  **Cntl + o**      Run one command in normal mode then return to insert mode
+
   **Cntl +v <Tab>** Insert normal tab with SuperTab plugin loaded
 
-  . repeat last insert mode change
+  **.**             Repeat last insert mode change
 
 Navigation
 ----------
 
 ###Keyboard navigation
 
-    **Basics**
+**Basics**
     k up
     j down
     l right
     h left
 
-    **Line navigation**
+**Line navigation**
     0 go to beginning of line
     $ go to end of line
     ^ go to first non-whitespace character in line
     g_ go to last non-whitespace character in line
 
-    **Word navigation**
+**Word navigation**
     e go to end of current word ("end") -- letters, digits, underscores
     E go to end of current WORD -- all non white-space chars
     b go to previous word ("before")
@@ -128,11 +146,11 @@ Navigation
     w go to next word
     W go to next WORD
 
-    **Paragraph navigation**
+**Paragraph navigation**
     { go to beginning of current paragraph
     } go to end of current paragraph
 
-    **Screen navigation**
+**Screen navigation**
     H go to f:irst line in screen
     M go to middle line in screen
     L go to last line in screen
@@ -142,7 +160,7 @@ Navigation
     Cntl + d forward a half screen
     Cntl + u backward half a screen
 
-    **file navigation**
+**file navigation**
     G   go to end of file
     gg  go to begining of file (also 1G)
 
@@ -163,7 +181,7 @@ Navigation
 
 ###Jumping
 
-    Jump points are set for searches, substitution and marks.
+  Jump points are set for searches, substitution and marks.
 
     <Ctnl>o jump to previous location
     <Ctnl>i jump to newer location (same as <Tab>)
@@ -201,27 +219,27 @@ Editing
     r replace one character and leave insert mode
     R ..
 
-    <space><char> insert a character without leaving navigation mode
-
 ###Insert a string a beginning of each line
-    1. Cntl + v
-    2. Select lines (e.g. "475G" to select up to line 475)
-    3. Shift + i
-    4. type string to insert
-    5. hit escape and wait ~1 second.
+
+  1. Cntl + v
+  2. Select lines (e.g. "475G" to select up to line 475)
+  3. Shift + i
+  4. type string to insert
+  5. hit escape and wait ~1 second.
 
 ###Insert newline with entering insert mode
 
-    o insert newline after current line
-    O insert newline before current line
+   o insert newline after current line
+   O insert newline before current line
 
 ### Insert n characters
 
-    Example, insert 80 dashes:
+  Example, insert 80 dashes:
+
     * <C-o> 80 i - <Esc>
     * <Esc> 80 i - <Esc>
 
-    http://stackoverflow.com/questions/5054128/repeating-characters-in-vim-insert-mode
+  http://stackoverflow.com/questions/5054128/repeating-characters-in-vim-insert-mode
 
 Selection
 ---------
@@ -261,8 +279,8 @@ Selection
     (paste text...)
     :set nopaste
 
-    # shortcut
-    http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+  # shortcut
+  http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 
 ###regex find & replace
 
@@ -280,26 +298,11 @@ Selection
 
 ###indent/unindent a block
 
-    in visual mode:
+  in visual mode:
         < unindent
         > indent
 
-vim delete
 
-copy text to system clipboard
-
-    1. <Shift> + highlight text to copy
-    2. middle-mouse click to paste
-
-cut and paste multiple lines
-    d<n>DOWN_ARROW
-    p
-
-cut/copy and paste (replace existing line)
-    <n>G
-    yy (or dd)
-    <n2>G
-    Vp
 
 replace
     r - replace one character
