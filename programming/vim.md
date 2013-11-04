@@ -65,7 +65,7 @@ General
 
 "[+]" in status-line means that changes have been made since last save.
 
-**Leave insert mode**
+**Methods to Leave insert mode**
 
     1. <Escape>
     2. <cntl> + [
@@ -76,11 +76,11 @@ General
 
 ###Command History
 
-1. "q:" or "q/" to enter command/search history
-2. Search for query of interest
-3. Edit it
-4. Enter to execute
-5. To cancel, press Cntl-c-c
+    1. "q:" or "q/" to enter command/search history
+    2. Search for query of interest
+    3. Edit it
+    4. Enter to execute
+    5. To cancel, press Cntl-c-c
 
   http://vim.wikia.com/wiki/Using_command-line_history
 
@@ -115,11 +115,14 @@ General
 
 ###Misc
 
-  **Cntl + o**      Run one command in normal mode then return to insert mode
+    Cntl + o       Run one command in normal mode then return to insert mode
+    Cntl +v <Tab>  Insert normal tab with SuperTab plugin loaded
+    .              Repeat last insert mode change
 
-  **Cntl +v <Tab>** Insert normal tab with SuperTab plugin loaded
+  Cntl + v signals to vim that whatever character follows should be inserted
+  as-is.
 
-  **.**             Repeat last insert mode change
+  http: //stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim
 
 Navigation
 ----------
@@ -127,18 +130,21 @@ Navigation
 ###Keyboard navigation
 
 **Basics**
+
     k up
     j down
     l right
     h left
 
 **Line navigation**
-    0 go to beginning of line
-    $ go to end of line
-    ^ go to first non-whitespace character in line
+
+    0  go to beginning of line
+    $  go to end of line
+    ^  go to first non-whitespace character in line
     g_ go to last non-whitespace character in line
 
 **Word navigation**
+
     e go to end of current word ("end") -- letters, digits, underscores
     E go to end of current WORD -- all non white-space chars
     b go to previous word ("before")
@@ -147,10 +153,12 @@ Navigation
     W go to next WORD
 
 **Paragraph navigation**
+
     { go to beginning of current paragraph
     } go to end of current paragraph
 
 **Screen navigation**
+
     H go to f:irst line in screen
     M go to middle line in screen
     L go to last line in screen
@@ -167,8 +175,8 @@ Navigation
     I/A insert at beginning/end of line
 
 ###Go to line <n>
+
     <n>G
-    -or-
     :<n>
 
 ###Search
@@ -187,7 +195,7 @@ Navigation
     <Ctnl>i jump to newer location (same as <Tab>)
     :jumps  list jumps
 
-    http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
+  http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
 
 Editing
 -------
@@ -217,20 +225,20 @@ Editing
     A end of line
     C from current position to end of line (replaces)
     r replace one character and leave insert mode
-    R ..
+    R replace multiple characters
 
 ###Insert a string a beginning of each line
 
-  1. Cntl + v
-  2. Select lines (e.g. "475G" to select up to line 475)
-  3. Shift + i
-  4. type string to insert
-  5. hit escape and wait ~1 second.
+    1. Cntl + v
+    2. Select lines (e.g. "475G" to select up to line 475)
+    3. Shift + i
+    4. type string to insert
+    5. hit escape and wait ~1 second.
 
 ###Insert newline with entering insert mode
 
-   o insert newline after current line
-   O insert newline before current line
+    o insert newline after current line
+    O insert newline before current line
 
 ### Insert n characters
 
@@ -254,13 +262,12 @@ Selection
 
 ###Select multiple lines
 
-    vnG  # select from cursor up to line n
-    VnG  # select from current line up to line n
-    v}   # select everything up to beginning of next paragraph
+    vnG  select from cursor up to line n
+    VnG  select from current line up to line n
+    v}   select everything up to beginning of next paragraph
+    gv   redo previous selection
 
-    shift + v nj   # selects next n lines
-
-    gv  # redo previous selection
+    shift + v nj   selects next n lines
 
 ###Select using marks
 
@@ -269,17 +276,14 @@ Selection
     Shift + v   # enter visual mode
     `a          # select back to mark a
 
-### Switch between buffers with unsaved work
-
-
 ### paste mode
 
-    # to avoid messing up indentation when pasting code, etc in
+To avoid messing up indentation when pasting code, etc in
+
     :set paste
     (paste text...)
     :set nopaste
 
-  # shortcut
   http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 
 ###regex find & replace
@@ -299,23 +303,9 @@ Selection
 ###indent/unindent a block
 
   in visual mode:
-        < unindent
-        > indent
 
-
-
-replace
-    r - replace one character
-    R - replace many characters
-
-insert tab
-
-    cntl + v -> Tab
-
-    (cntl + v signals to vim that whatever character follows should be inserted
-    as-is...)
-
-    http: //stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim
+    < unindent
+    > indent
 
 Useful links
 ------------
