@@ -2,8 +2,8 @@
 Arch Linux Notes
 ================
 
-I. Installation
----------------
+Installation
+------------
 
 ###Package selection
 
@@ -12,9 +12,8 @@ I. Installation
 
 ###See also
 
-[https://wiki.archlinux.org/index.php/Beginners'_Guide](Beginner's Guide)
-[https://wiki.archlinux.org/index.php/General_Recommendations](General Recommendations)
-
+* [Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners'_Guide)
+* [General Recommendations](https://wiki.archlinux.org/index.php/General_Recommendations)
 
 Post Installation
 -----------------
@@ -255,15 +254,15 @@ Set evince as default PDF viewer
 
 ###Suspend/hibernate
 
-https://wiki.archlinux.org/index.php/Pm-utils
-http://arcierisinasce.wordpress.com/2011/11/12/suspend-on-lid-close/
-
     sudo pacman -S acpi acpid pm-utils
 
     add acpid to daemons in rc.conf
     enable regular user access (visudo)    
 
     sudo gpasswd -a <user> power
+
+  https://wiki.archlinux.org/index.php/Pm-utils
+  http://arcierisinasce.wordpress.com/2011/11/12/suspend-on-lid-close/
 
 ###SSHD
 
@@ -293,7 +292,7 @@ http://arcierisinasce.wordpress.com/2011/11/12/suspend-on-lid-close/
     [icon theme] 
     Inherits=XcursorHuman
 
-    (https://wiki.archlinux.org/index.php/X11_Cursors)
+  https://wiki.archlinux.org/index.php/X11_Cursors
 
 ###R
 
@@ -348,13 +347,14 @@ http://arcierisinasce.wordpress.com/2011/11/12/suspend-on-lid-close/
     sudo /usr/bin/mysql_secure_installation
 
     # PHP
-    Edit /etc/httpd/conf/httpd.conf and place this in the "LoadModule" list anywhere after LoadModule dir_module modules/mod_dir.so: 
+    Edit /etc/httpd/conf/httpd.conf and place this in the "LoadModule" list 
+    anywhere after LoadModule dir_module modules/mod_dir.so: 
         LoadModule php5_module modules/libphp5.so
 
     Place this at the end of the "Include" list: 
         Include conf/extra/php5_module.conf
 
-    (https://wiki.archlinux.org/index.php/LAMP)
+  https://wiki.archlinux.org/index.php/LAMP
 
 ###UFW
 
@@ -406,7 +406,7 @@ ibus-qt is needed to input into goldendict
     sudo vim /etc/fstab
     /dev/<NTFS-part>  /mnt/windows  ntfs-3g   defaults          0       0
 
-    (https://wiki.archlinux.org/index.php/NTFS-3G)
+  https://wiki.archlinux.org/index.php/NTFS-3G
 
 ###Better fonts
 
@@ -419,26 +419,26 @@ Other
 
 **Basic commands**
 
-    pacman -Syu                            // update system
-    pacman -S <package>                    // install a package
-    pacman -R <package>                    // remove a package
-    pacman -Rns <package>                  // remove a package, uneeded dependencies, and config files
-    pacman -Ss <package>                   // search for package
-    pacman -Si <package>                   // get package details
-    pacman -Sii <package>                  // same as above but includes 'required by'
-    pacman -Ql <package>                   // get list of files installed for package
+    pacman -Syu                  // update system
+    pacman -S <package>          // install a package
+    pacman -R <package>          // remove a package
+    pacman -Rns <package>        // remove a package, unused deps, and confs
+    pacman -Ss <package>         // search for package
+    pacman -Si <package>         // get package details
+    pacman -Sii <package>        // same as above but includes 'required by'
+    pacman -Ql <package>         // get list of files installed for package
+    pacman -Qdtq | pacman -Rs -  // apt-get autoremove
+    pacman -Scc                  // apt-get autoclean
+    pacman -Sc                   // clean up cache
+    pacman -Qm                   // list AUR installed packages
     pacman -Sp --print-format %n <package> // apt-get build-dep
-    pacman -Qdtq | pacman -Rs -            // apt-get autoremove
-    pacman -Scc                            // apt-get autoclean
-    pacman -Sc                             // clean up cache
-    pacman -Qm                             // list AUR installed packages
 
 **list regular installed packages**
 
     comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > packages.txt
 
-    https://wiki.archlinux.org/index.php/Pacman_Rosetta
-    https://bbs.archlinux.org/viewtopic.php?pid=878329
+  https://wiki.archlinux.org/index.php/Pacman_Rosetta
+  https://bbs.archlinux.org/viewtopic.php?pid=878329
 
 **apt-file like tools**
 
@@ -448,43 +448,50 @@ Other
 
 ###LAMP issues
 
-1) Symbolic link not allowed or link target not accessible: /srv/http/vso (where vso points to /home/hughitt1/Dropbox/vso)
+1) Symbolic link not allowed or link target not accessible: 
+   /srv/http/outside_dir (where outside_dir points to /home/<user>/outside_dir)
 
-    First, make sure that "FollowSymLinks" is enabled for / in /etc/httpd/conf/httpd.conf
+    First, make sure that "FollowSymLinks" is enabled for / 
+    in /etc/httpd/conf/httpd.conf
 
-    PROBLEM: Apache user (http) must be able to change directories to the linked dir... this means they must
-    be able to change to /home, /home/hughitt1, etc.
+    PROBLEM: Apache user (http) must be able to change directories to the 
+    linked dir... this means they must be able to change to /home, 
+    /home/<user>, etc.
 
     /home/ is owned by root:root, but has global execute priveleges,
-    /home/hughitt is owned by hughitt1:users, but does NOT have global execute privileges, so
+    /home/hughitt is owned by <user>:users, but does NOT have global execute 
+    privileges, so
 
         usermod -a -G users http  // adds apache to 'users' group
-        chmod g+x /home/keith
-        chmod g+x /home/keith/Dropbox
-        chmod -R g+x /home/keith/Dropbox/vso
+        chmod g+x /home/<user>
+        chmod g+x /home/<user>/Dropbox
+        chmod -R g+x /home/<user>/outside_dir
         sudo rc.d restart httpd
 
-    (https://bbs.archlinux.org/viewtopic.php?id=42413)
+  https://bbs.archlinux.org/viewtopic.php?id=42413
 
 2) When attempting to login as "http" for testing you are forced
-   to change the password: "You are required to change your password immediately (root enforced)"
+   to change the password: "You are required to change your password 
+   immediately (root enforced)"
 
    UNSOLVED
 
-   (http://www.puschitz.com/SecuringLinux.shtml)
-   (https://bbs.archlinux.org/viewtopic.php?pid=247076)
+  http://www.puschitz.com/SecuringLinux.shtml
+  https://bbs.archlinux.org/viewtopic.php?pid=247076
 
 ###Change default browser
 
-    Edit ~/.local/share/applications/mimeapps.list:
-        [Added Associations]
-        x-scheme-handler/http=chromium.desktop
+Edit ~/.local/share/applications/mimeapps.list:
+
+    [Added Associations]
+    x-scheme-handler/http=chromium.desktop
 
 ###Installing OpenJPEG
 
     * Remove all old versions from /usr/include and /usr/lib
     * Compile and install from trunk using "./configure --prefix=/usr"
-        (see https://bbs.archlinux.org/viewtopic.php?id=99807)
+
+  https://bbs.archlinux.org/viewtopic.php?id=99807
 
 ###PlayOnLinux
 
@@ -575,6 +582,7 @@ Solution:
         URxvt*termName: rxvt-256color
     3. In host .screenrc, add:
         term rxvt-256color
+
 AUR Packaging
 -------------
 

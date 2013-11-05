@@ -143,6 +143,13 @@ Navigation
     ^  go to first non-whitespace character in line
     g_ go to last non-whitespace character in line
 
+**Character navigation**
+
+    f<char> move cursor to next instance of the character
+    F<char> move cursor to  the previous instance of the character
+    t<char> move cursor just before the next char
+    T<char> move cursor just before the previous char
+
 **Word navigation**
 
     e go to end of current word ("end") -- letters, digits, underscores
