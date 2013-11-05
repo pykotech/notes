@@ -122,7 +122,7 @@ General
   Cntl + v signals to vim that whatever character follows should be inserted
   as-is.
 
-  http: //stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim
+  http://stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim
 
 Navigation
 ----------
@@ -271,10 +271,10 @@ Selection
 
 ###Select using marks
 
-    ma          # places mark a on current line
-    :n          # move to line n
-    Shift + v   # enter visual mode
-    `a          # select back to mark a
+    ma          Places mark a on current line
+    :n          Move to line n
+    Shift + v   Enter visual mode
+    `a          Select back to mark a
 
 ### paste mode
 
@@ -296,9 +296,8 @@ To avoid messing up indentation when pasting code, etc in
     %s/\%Vold/new/g
 
     # word under cursor
-    *           # first start search using current workd
-    %s//xyz/g   # blant
-    uuuusearch uses default register (now set by above search)
+    *           # first start search using current word
+    %s//xyz/g   # leave first field blank (uses word from default register)
 
 ###indent/unindent a block
 
