@@ -105,6 +105,23 @@ General
         COPY  "+yy
         PASTE "+p
 
+###Spell check
+
+To toggle spell checker, use:
+
+    :set spell
+    :set nospell
+
+Some useful commands for spell check
+
+    ]s  Move to next mispelled word
+    [s  Move to previous mispelled word
+    z=  Get suggestions for a bad word
+    zg  Add word under cursor (good word)
+    zG  Similar to above but only add to internal list
+
+  http://vimdoc.sourceforge.net/htmldoc/spell.html
+
 ###Macros recording
 
     q{0-9a-zA-Z"}    start recording
