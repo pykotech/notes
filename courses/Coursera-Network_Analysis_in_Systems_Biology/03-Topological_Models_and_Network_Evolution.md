@@ -133,11 +133,45 @@ networks (Milo et al. 2002)
 Large Size Motifs and Complex Models of Network Evolution
 =========================================================
 
-Adjacency eigenvectors $\sim$ network stability
+It is also interesting to look for larger network motifs (e.g. 5 nodes or 
+more), however, this is computationally challenging.
 
-Couple more network growth modles:
-1. Magnetization network
-2. Hierarchical growth model
+Ordered Cyclic Motifs (Ma'ayan et al. 2010)
+-------------------------------------------
+- To get around the problem of there being a very large number of possible 
+  motifs containing more than a few nodes in mixed graphs, Ma'ayan et al. 
+  decided to focus on cycles.
+- Classified nodes in these cycles into three types:
+ 1. **sink nodes** - two incoming arrows
+ 2. **source nodes** - two outgoing arrows
+ 3. **pass-through nodes** - one arrow in, one arrow out
+ 4. **neutral nodes** - nodes with at least one undirected adjacent edge.
+- Looked at nine real-world technological and biological directed and mixed 
+  networks.
+ - In biological networks you find many more sources and sinks in the cycles
+   than what you would expect at random.
+ - FAA is closer to random - same number of sources and sinks as pass-through
+   nodes.
+ - For some of the networks, as the loop size changes, the propensity for
+   different types of nodes changes.
+- Simulations showed that these networks are more stable compared with random
+  networks.
+- Stability due to the increased levels of sources and sinks.
+
+Magnetization Model (MacArthur, Ma'ayan et al. 2010)
+----------------------------------------------------
+1. Start with Erdos-Renyi random network
+2. Swap links to enrich network in sources and sinks
+3. Using a set of simple rules that couple the swapping of links to increase
+   sources and sinks to dynamical stability, arrived at networks with many
+   of the properties of real-world biochemical networks.
+4. **Adjacency matrix eigenvalues $\sim$ network stability**
+
+Hierarchical Organization of Pathways from Ligands (Ma'ayan et al. 2006)
+------------------------------------------------------------------------
+- Another model for network evolution/growth.
+- Goal is to create a model that grows networks in a way where the network
+can interact with and try to adapt to environmental conditions as it grows.
 
 Network Properties of Biological Networks
 =========================================
