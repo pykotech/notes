@@ -102,13 +102,17 @@ connected subgraph of $G$ is a **(connected) component** of $G$.
 - $k(G)$ = # of components of a graph $G$
 
 Example: two connected components
-```{r connected_components}
+
+```r
 library(igraph)
 x = matrix(0, 7, 7)
-x[0:3,0:3] = 1
-x[4:7,4:7] = 1
-plot(graph.adjacency(x, mode='undirected'))
+x[0:3, 0:3] = 1
+x[4:7, 4:7] = 1
+plot(graph.adjacency(x, mode = "undirected"))
 ```
+
+![plot of chunk connected_components](figure/connected_components.png) 
+
 
 References
 ----------
