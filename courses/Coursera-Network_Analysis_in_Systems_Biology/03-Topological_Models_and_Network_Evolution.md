@@ -8,17 +8,19 @@ Small-World and Scale-Free Networks
 Background
 ----------
 
-**Erdos-Renyi Random Networks**
-* Erdos and Renyi studied networks with randomly connected nodes (1959).
-* Showed that degree distribution for random networks follow a Poisson (~Normal)
-distribution.
+**Erdős-Rényi Random Networks**
+* Erdős and Rényi studied networks with randomly connected nodes (1959).
+* For example, place some buttons on a table and then connect buttons with
+  random connections.
+* Showed that degree distribution for random networks follow a Poisson 
+  (~Normal) distribution.
 
 **"Real" Networks are "Small World"**
-* Watts and Strogatz showed that real world systems follow "small world" 
-topology (1998).
+* Duncan Watts and Steve Strogatz showed that real world systems follow 
+  **small world** topology (1998).
 * Real world system are *not* random but instead they have:
- 1. High clustering coefficients, and,
- 2. Relatively short characteristic patterning.
+ 1. High clustering coefficients ($C$), and,
+ 2. Relatively short characteristic path lengths ($L$).
 
 Looked at three complex systems:
  * IMDB (movies)
@@ -27,11 +29,14 @@ Looked at three complex systems:
 
 **Clustering Coefficient**
 
- A measure of how the neighbors of a node are connected.
+- A measure of how the *neighbors* of a node are connected to each other.
+- It represents the degree to which nodes in a graph tend to cluster together.
 
-C=1   All neighbors are connected
-C=1/2 Neighbors have half of the total possible connections
-C=0   No neighbors are connected to one another
+![clustering coefficient](images/clustering_coefficent_ravasz.jpg)
+
+**C=1**   All neighbors are connected
+**C=1/2** Neighbors have half of the total possible connections
+**C=0**   No neighbors are connected to one another
 
 **Characteristic Path Length**
 The average shortest distance between all possible pairs of nodes in a network.
@@ -46,7 +51,7 @@ Real world network degree distribution follows power-law distribution
 To construct such a network:
 * Start with a few randomly connected nodes
 * Start adding new nodes and links to the system:
- - Adding randomly will result in Erdos-Renyi random network.
+ - Adding randomly will result in Erdős-Rényi random network.
  - In Rich-get-richer model, new nodes are added with a varying probability
    based on existing nodes.
 * Stop once it reaches your desired size.
@@ -144,3 +149,8 @@ Feedback loops
 * Negative feedback loops enriched at membrane while positive feedback loops
 are more common further into the cytoplasm.
 
+References
+==========
+1. http://en.wikipedia.org/wiki/Clustering_coefficient
+2. Duncan J. Watts, Steven H. Strogatz,   (1998) Unknown.  *Nature*  **393**  440-442  [10.1038/30918](http://dx.doi.org/10.1038/30918)
+3. E. Ravasz,   (2002) Hierarchical Organization of Modularity in Metabolic Networks.  *Science*  **297**  1551-1555  [10.1126/science.1073374](http://dx.doi.org/10.1126/science.1073374)

@@ -86,7 +86,7 @@ be traversed more than once though.)
 
 **Theorem 1.6**
 *If a graph $G$ contains a $u - v$ alk of length $l$, then $G$ contains a $u -
-v$ path of length at most $l$.
+v$ path of length at most $l$.*
 
 - A **circuit** in graph $G$ is a closed *trail* of length 3 or more.
 - A **cycle** is a circuit where no vertex (except the first/last) is repeated.
