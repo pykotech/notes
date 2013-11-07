@@ -5,20 +5,30 @@
 Types of Biological Networks
 ============================
 
-Cell-signalling pathways
+Cell-signaling pathways
 ------------------------
 - Typically represented by signed mixed graphs
-- nodes = proteins, metabolites, lipids, etc.
+- nodes = mostly proteins, but also metabolites, lipids, etc.
 - edges = information flow (activation or inhibition); enzymatic/binding
 - Ex. Wikipathways, KEGG, etc.
 
-**Kinase-substrate networks**
-Directed bipartite graphs linking kinases with substrates.
+However, as more information accumulates, starting to think more about
+signaling *networks* instead of just signaling *pathways*.
 
-**Pseudo-nodes** used to represent unknown links between components in a
+**Protein Kinase-substrate networks**
+- Directed bipartite graphs linking kinases with substrates through
+protein phosphorylation.
+- Build using phosphoproteomics data
+- Useful for linking changes in phospho-peptide levels with kinase cascade 
+  responsible for those changes.
+
+### Missing data
+- **Incomplete knowledge** on connectivity of cell signaling networks makes it
+difficult to build dynamical models of those systems.
+- **Pseudo-nodes** used to represent unknown links between components in a
 network.
 
-Gene Regulation Networks
+Gene Regulatory Networks
 ------------------------
 - Genes & TFs
 - Edges can be activating or inhibitory
@@ -39,7 +49,7 @@ Network sources
 
 ## Reverse Engineering
 1. Inferring Networks from Time Series Microarrays (e.g. Zou et al. 2005)
-2. Perturbations and Bayesian Networks
+2. Perturbations and Bayesian Networks (Sachs et al. 2005)
 
 Other Networks
 --------------
@@ -92,6 +102,11 @@ Other examples:
  - Example: FDA Adverse Event Reporting Systems (FAERS) database
  - Can use to infer interactions between drugs and side-effects.
 - Author collaboration networks
+
+Functional Association Networks with Genes2FANs
+-----------------------------------------------
+
+
 
 References
 ==========
