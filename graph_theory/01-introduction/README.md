@@ -50,8 +50,11 @@ Introduction
 - $G$ contains $H$ as a subgraph
 
 **Proper subgraphs**
-- If $H \subseteq G$ and either $V(H)$ is a proper subset of $V(G)$ or $E(H)$
-  is a proper subset $E(G)$, then $H$ is a proper subgraph of $G$.
+- If $H \subseteq G$ and either $V(H)$ is a proper subset (it must be missing
+  at least one of the items in the original set) of $V(G)$ or $E(H)$ is a 
+  proper subset $E(G)$, then $H$ is a proper subgraph of $G$.
+- *i.e.* it is a subgraph with some differences from the original graph ($G$
+  is a subgraph of itself, but not a proper subgraph.)
 - Any proper subgraph of graph $G$ can be obtained by removing vertices and
   edges from $G$ (e.g. $G - e_1 - e_2 \ldots - e_k$)
 
@@ -77,7 +80,28 @@ and ending at $v$ s.t. consecutive vertices in the sequence are adjacent.
 - **open walk**: $u \neq v$
 - **length** of a walk = the number of edges (including multiple occurences
 of the same edge) traversed.
+- A **trail** is a walk where no *edge* is traversed more than once (nodes can
+be traversed more than once though.)
+- A **path** is a walk where no *vertex* is visited more than once.
+
+**Theorem 1.6**
+*If a graph $G$ contains a $u - v$ alk of length $l$, then $G$ contains a $u -
+v$ path of length at most $l$.
+
+- A **circuit** in graph $G$ is a closed *trail* of length 3 or more.
+- A **cycle** is a circuit where no vertex (except the first/last) is repeated.
+- A **$k$-cycle** is a cycle of length $k$.
+
+## Connectedness
+- If *G* contains a $u-v$ path, then $u$ and $v$ are said to be **connected**
+and $u$ **is connected to** $v$.
+- A graph $G$ is **connected** if every two vertices of $G$ are connected.
+- A graph $G$ that is not connected is called **disconnected**.
+- A connected subgraph of $G$ that is not a proper subgraph of any other
+connected subgraph of $G$ is a **(connected) component** of $G$.
+- $k(G)$ = # of components of a graph $G$
 
 References
 ----------
 - Gary Chartrand,   (2012) A first course in graph theory.
+- http://mathworld.wolfram.com/ProperSubset.html
