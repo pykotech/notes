@@ -108,6 +108,8 @@ library(igraph)
 x = matrix(0, 7, 7)
 x[0:3, 0:3] = 1
 x[4:7, 4:7] = 1
+diag(x) = 0
+
 plot(graph.adjacency(x, mode = "undirected"))
 ```
 
