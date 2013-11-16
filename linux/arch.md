@@ -181,6 +181,10 @@ For laptops, also install
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
     ~/Dropbox/dotfiles/setup.sh
 
+###Audio
+
+    sudo pacman -S pavucontrol
+    yaourt pasystray-git pamixer-git
 ###Fonts
 
     mkdir ~/.fonts
