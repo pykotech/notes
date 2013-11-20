@@ -81,7 +81,8 @@ Network Visualization
 Network2Canvas and Enrichment Analysis with N2C
 -----------------------------------------------
 
-## GATE: Grid Analysis of Time-series Expression (MacArthur et al. 2009)
+## GATE: Grid Analysis of Time-series Expression 
+MacArthur et al. 2009
 
 ![GATE](http://amp.pharm.mssm.edu/maayan-lab/img/gatebackground.png)
 
@@ -102,6 +103,7 @@ Network2Canvas and Enrichment Analysis with N2C
 
 - Place each gene on a hexagonal grid s.t. genes with similar expression
   profiles are close together.
+    - Self-organizing map?
 - Uses [simmulated
   annealing](http://en.wikipedia.org/wiki/Simulated_annealing) to find a good
   arrangement for all of the genes.
@@ -114,5 +116,18 @@ Network2Canvas and Enrichment Analysis with N2C
     - green: expression decreases
     - red: expression increases
 
+## Network2Canvas
+
+![N2C](https://i.ytimg.com/vi/R3eBQcRcOEY/mqdefault.jpg)
+
+### Overview
+
+- Idea of visualizing expression on a grid extended to deal with any type of
+  network.
+  - Take a gene set library or drug set library
+  - transpose library
+  - feed to Sets2Networks
+  - project on canvas
+  - uses a square grid instead of hexagonal (easier to implement)
 
 
