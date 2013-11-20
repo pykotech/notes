@@ -2,20 +2,22 @@
 % [Keith Hughitt](khughitt@umd.edu)
 % 2013/10/20
 
+Topological Models and Network Evolution
+========================================
+
 Small-World and Scale-Free Networks
-===================================
+-----------------------------------
 
-Background
-----------
+## Background
 
-**Erdős-Rényi Random Networks**
+### Erdős-Rényi Random Networks
 * Erdős and Rényi studied networks with randomly connected nodes (1959).
 * For example, place some buttons on a table and then connect buttons with
   random connections.
 * Showed that degree distribution for random networks follow a Poisson 
   (~Normal) distribution.
 
-**"Real" Networks are "Small World"**
+### "Real" Networks are "Small World"
 * Duncan Watts and Steve Strogatz showed that real world systems follow 
   **small world** topology (1998).
 * Real world system are *not* random but instead they have:
@@ -27,7 +29,7 @@ Looked at three complex systems:
  * Powergrid systems
  * Neuronal connectivity map of *C. elegans*
 
-**Clustering Coefficient**
+### Clustering Coefficient
 
 - A measure of how the *neighbors* of a node are connected to each other.
 - It represents the degree to which nodes in a graph tend to cluster together.
@@ -35,14 +37,16 @@ Looked at three complex systems:
 ![clustering coefficient](images/clustering_coefficent_ravasz.jpg)
 *Ravasz et al. 2002*
 
-**C=1**   All neighbors are connected
-**C=1/2** Neighbors have half of the total possible connections
-**C=0**   No neighbors are connected to one another
+* **C=1**   All neighbors are connected
+* **C=1/2** Neighbors have half of the total possible connections
+* **C=0**   No neighbors are connected to one another
 
-**Characteristic Path Length**
+### Characteristic Path Length
+
 The average shortest distance between all possible pairs of nodes in a network.
 
-**Creating small-world networks**
+### Creating small-world networks
+
 1. Start with a regular lattice
 2. Gradually randomize connections by taking an edge and moving it to a random
    location.
@@ -54,7 +58,7 @@ The average shortest distance between all possible pairs of nodes in a network.
 These "small world" networks fall about fall way between a completely connected
 network and a complete randomized network. (Watts and Strogatz, 1998)
 
-**Rich-Get-Richer network growth model**
+### Rich-Get-Richer network growth model
 Real world network degree distribution follows power-law distribution 
 (**scale-free**) and not a poisson distribution (Barabasi and Albert; 1999).
 
@@ -66,7 +70,7 @@ To construct such a network:
    based on existing nodes.
 * Stop once it reaches your desired size.
 
-**Power-law distribution as a result of diverse agents**
+### Power-law distribution as a result of diverse agents
 
 Many complex systems tend to have this scale-free property. When comparing
 similar things, likely get Normal distribution. When you have more diverse
@@ -78,7 +82,8 @@ heights in NYC).
 * Some argue that the power-law distribution is not a *feature* of the network
 per say, but rather just a result of having diverse agents.
 
-**Hub nodes**
+### Hub nodes
+
 * In a scale-free network you have a few very highly-connected nodes; small
 proportion of total network, but much higher than for random networks.
 * In scale-free networks, there is sometimes a drop in hubs: they do not
@@ -87,10 +92,9 @@ grow infinitely large.
 nodes (e.g. max height for a building.)
 
 Duplication-Divergence and Network Motifs
-=========================================
+-----------------------------------------
 
-Survival of the fittest
------------------------
+## Survival of the fittest
 
 - An agent's fitness determines its ability to survive and spread.
 - Agent-fitness depends on many different factors (longevity, mobility, etc).
@@ -98,8 +102,7 @@ Survival of the fittest
 - **Processivity** - once a process is started it takes less energy to keep
   it going.
 
-Duplication-divergence
-----------------------
+## Duplication-divergence
 
 Growth by duplication and divergence is very common among complex systems.
 - Examples: different types of browsers, search engines, or similar car models.
@@ -113,8 +116,8 @@ Growth by duplication and divergence is very common among complex systems.
 2. Add new nodes by duplicating and existing node
 3. Remove new nodes with probability $p$
 
-Network Motifs
---------------
+## Network Motifs
+
 Milo et al. looked at motifs found in real *directed* networks which
 occur at a higher probability than would be expected in similar-sized random
 networks (Milo et al. 2002)
@@ -131,13 +134,13 @@ networks (Milo et al. 2002)
 **Graphlets** - motifs in undirected networks (Wuchty et al. 2003)
 
 Large Size Motifs and Complex Models of Network Evolution
-=========================================================
+---------------------------------------------------------
 
 It is also interesting to look for larger network motifs (e.g. 5 nodes or 
 more), however, this is computationally challenging.
 
-Ordered Cyclic Motifs (Ma'ayan et al. 2010)
--------------------------------------------
+## Ordered Cyclic Motifs (Ma'ayan et al. 2010)
+
 - To get around the problem of there being a very large number of possible 
   motifs containing more than a few nodes in mixed graphs, Ma'ayan et al. 
   decided to focus on cycles.
@@ -158,8 +161,8 @@ Ordered Cyclic Motifs (Ma'ayan et al. 2010)
   networks.
 - Stability due to the increased levels of sources and sinks.
 
-Magnetization Model (MacArthur, Ma'ayan et al. 2010)
-----------------------------------------------------
+## Magnetization Model (MacArthur, Ma'ayan et al. 2010)
+
 1. Start with Erdos-Renyi random network
 2. Swap links to enrich network in sources and sinks
 3. Using a set of simple rules that couple the swapping of links to increase
@@ -167,19 +170,17 @@ Magnetization Model (MacArthur, Ma'ayan et al. 2010)
    of the properties of real-world biochemical networks.
 4. **Adjacency matrix eigenvalues $\sim$ network stability**
 
-Hierarchical Organization of Pathways from Ligands (Ma'ayan et al. 2006)
-------------------------------------------------------------------------
+## Hierarchical Organization of Pathways from Ligands (Ma'ayan et al. 2006)
 - Another model for network evolution/growth.
 - Goal is to create a model that grows networks in a way where the network
 can interact with and try to adapt to environmental conditions as it grows.
 
 Network Properties of Biological Networks
-=========================================
+-----------------------------------------
 
-Hub Proteins
-------------
+## Hub Proteins
 
-## Types of Hubs
+### Types of Hubs
 
 1. **Party hubs** - network hubs that interact with genes at same time and
    space.
@@ -194,8 +195,7 @@ with many proteins at once.
 proteins that are more promiscuous in their ability to bind to multiple 
 partners at the same binding site (e.g. kinases, actin, etc.)
 
-Bow-ties
---------
+## Bow-ties
 * Cell signaling networks are often organized in this fashion (Oda and Kitano, 
 2006).
 * Many receptors (e.g. TLRs, tyrosine kinase receptors) share the same molecule
@@ -204,17 +204,16 @@ different, there are shared adaptor proteins (e.g. MyD88 for TLRs).
 * Once information is consolodated at adaptor, network fans out again, with
 many possible targets.
 
-Bifans
-------
+## Bifans
 * Most abundant biological network motif
 
-Feedback loops
---------------
+## Feedback loops
 * Negative feedback loops enriched at membrane while positive feedback loops
 are more common further into the cytoplasm.
 
 References
-==========
+----------
 1. http://en.wikipedia.org/wiki/Clustering_coefficient
 2. Duncan J. Watts, Steven H. Strogatz,   (1998) Unknown.  *Nature*  **393**  440-442  [10.1038/30918](http://dx.doi.org/10.1038/30918)
 3. E. Ravasz,   (2002) Hierarchical Organization of Modularity in Metabolic Networks.  *Science*  **297**  1551-1555  [10.1126/science.1073374](http://dx.doi.org/10.1126/science.1073374)
+
