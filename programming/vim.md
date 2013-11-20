@@ -60,6 +60,7 @@ General
     yy (or dd)
     <n2>G
     Vp
+    vep          Replace word under cursor with yanked text
 
 ###Modes
 
