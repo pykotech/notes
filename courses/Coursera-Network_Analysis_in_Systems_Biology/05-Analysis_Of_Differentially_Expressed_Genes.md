@@ -5,6 +5,32 @@
 Analysis of Differentially Expressed Genes and Proteins
 =======================================================
 
+Background
+----------
+
+## GSEA: Gene Set Enrichment Analysis (2005)
+
+- [Subramanian et al.](http://www.pnas.org/content/102/43/15545.short)
+- Developed a statistical test based on the [Kolmogorov-Smirnov
+  test](http://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
+- Also developed database of gene-set libraries:
+  [MSigDB](http://www.broadinstitute.org/msigdb)
+
+### Kolmogorov-Smirnov test
+
+![KS test](http://upload.wikimedia.org/wikipedia/commons/c/cf/KS_Example.png)
+
+> Kolmogorov–Smirnov test (K–S test) is a nonparametric test for the equality
+> of continuous, one-dimensional probability distributions that can be used to
+> compare a sample with a reference probability distribution (one-sample K–S
+> test), or to compare two samples (two-sample K–S test)
+(Wikipedia)
+
+- K-S statistic quanitifies distance between the empirical distribution
+function of the sample and the cumulative distribution function of the
+reference distribution.
+- null hypothesis: samples are drawn from the same distribution.
+
 The Fisher Exact Test and Enrichr
 ---------------------------------
 
@@ -38,7 +64,18 @@ The Fisher Exact Test and Enrichr
 By flattening the graph structures of GO, KEGG, etc., it is possible to apply
 simple statistical methods to look for enrichment.
 
-## Fisher Exact Test
+## Fisher's Exact Test
+
+![RA Fisher](http://upload.wikimedia.org/wikipedia/commons/4/46/R._A._Fischer.jpg)
+
+### Overview
+
+- Statistical significance test used in the analysis of contingency tables.
+- Useful for categorical data resulting from classfying objects in two
+  different way.
+
+
+For Gene enrichment analysis:
 
 For each set of terms, a p-value is computed that evaluates the enrichment
 level of the term with the list of input genes.
@@ -54,9 +91,31 @@ expected if terms were randomly distributed.
 
 ## Enrichr
 
-- Implements Fisher Exact test (and some other methods) by Chen et al. (2013)
-- Currently incorporates 34 different gene set lists (GO, KEGG, Wikipathways,
-  etc.)
+![Enrichr screenshot](http://www.biomedcentral.com/content/supplementary/1471-2105-14-128-s2.png)
+
+- Chen et al. (2013)
+- Provides three different methods for computing enrichment:
+    1. Fisher exact test
+    2. "Corrected" version of Fisher exact test 
+    3. Combination of p-value from Fisher exact test with z-score of deviation
+      from expected rank:
+      $$c=log(p)*z$$
+- Currently incorporates 34 different gene set lists:
+    - GO
+    - KEGG
+    - Wikipathways
+    - etc.
+
+### Motivation
+
+- Many other tools similar to GSEA have been developed, but most tend to focus
+  on GO enrichment
+- These tools often use Fisher exact test to compute enrichment.
+- FE test family is biased with respect to list size.
+- Goals of Enrichr:
+    - incorporate other gene set lists
+    - do better than Fisher exact test
+    - visualization
 
 Network Visualization
 ---------------------
@@ -130,4 +189,30 @@ MacArthur et al. 2009
   - project on canvas
   - uses a square grid instead of hexagonal (easier to implement)
 
+Expression2Kinases - Inferring Pathways for Differentially Expressed Genes
+--------------------------------------------------------------------------
 
+### Cell Signalling Pathways
+
+Pathways aren't as isolated as they are often portrayed -- may be better to
+think of them as having fuzzy boundaries with members of varying importance.
+
+### KEA: Enrichment Analysis for Kinase-Substrate Interactions from Literature
+
+![KEA](http://bioinformatics.oxfordjournals.org/content/25/5/684/F1.large.jpg)
+
+- Collected kinase-substrate reactions from various online databases
+- Used to create a large-scale network of KS reactions and also a gene set
+  library with kinases as terms and substrates at row entries.
+  - Can use for enrichment analysis
+- SIL
+
+References
+----------
+- Edward Y Chen, Christopher M Tan, Yan Kou, Qiaonan Duan, Zichen Wang,
+  Gabriela Meirelles, Neil R Clark, Avi Ma’ayan,   (2013) Enrichr: Interactive
+  And Collaborative Html5 Gene List Enrichment Analysis Tool.  *Bmc
+  Bioinformatics*  **14**  128-NA
+  [10.1186/1471-2105-14-128](http://dx.doi.org/10.1186/1471-2105-14-128)> 
+- http://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test
+- http://en.wikipedia.org/wiki/Fisher's_exact_test
