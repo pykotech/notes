@@ -18,6 +18,11 @@ Small-World and Scale-Free Networks
   (~Normal) distribution.
 
 ### "Real" Networks are "Small World"
+
+![Small world
+topology](http://www.nature.com/nature/journal/v393/n6684/images/393440aa.eps.2.gif)
+(Watts and Strogatz, 1998)
+
 * Duncan Watts and Steve Strogatz showed that real world systems follow 
   **small world** topology (1998).
 * Real world system are *not* random but instead they have:
@@ -25,6 +30,7 @@ Small-World and Scale-Free Networks
  2. Relatively short characteristic path lengths ($L$).
 
 Looked at three complex systems:
+
  * IMDB (movies)
  * Powergrid systems
  * Neuronal connectivity map of *C. elegans*
@@ -72,6 +78,10 @@ To construct such a network:
 
 ### Power-law distribution as a result of diverse agents
 
+![random vs.
+scale-free](http://www.network-science.org/fig_complex_networks_powerlaw_scalefree_node_degree_distribution_large.png)
+(source: http://www.network-science.org/powerlaw_scalefree_node_degree_distribution.html)
+
 Many complex systems tend to have this scale-free property. When comparing
 similar things, likely get Normal distribution. When you have more diverse
 agents, however, more likely to get a power-law distribution (e.g. building
@@ -105,6 +115,7 @@ Duplication-Divergence and Network Motifs
 ## Duplication-divergence
 
 Growth by duplication and divergence is very common among complex systems.
+
 - Examples: different types of browsers, search engines, or similar car models.
 - Duplication-divergence model is an alternative model capable of generating
   scale-free networks that is **more relevant to biology**
@@ -118,9 +129,13 @@ Growth by duplication and divergence is very common among complex systems.
 
 ## Network Motifs
 
+![network motifs](http://www.nature.com/nrn/journal/v11/n4/images/nrn2807-f2.jpg)
+(Kotaleski & Blackwell, 2010)
+
 Milo et al. looked at motifs found in real *directed* networks which
 occur at a higher probability than would be expected in similar-sized random
 networks (Milo et al. 2002)
+
 - Created random (Erdos-Renyi) networks
 - Counted the number of times they see "short circuits" (~3-4 nodes) connecting
   several nodes in a particular way in *actual* networks.
@@ -216,4 +231,7 @@ References
 1. http://en.wikipedia.org/wiki/Clustering_coefficient
 2. Duncan J. Watts, Steven H. Strogatz,   (1998) Unknown.  *Nature*  **393**  440-442  [10.1038/30918](http://dx.doi.org/10.1038/30918)
 3. E. Ravasz,   (2002) Hierarchical Organization of Modularity in Metabolic Networks.  *Science*  **297**  1551-1555  [10.1126/science.1073374](http://dx.doi.org/10.1126/science.1073374)
-
+4. Jeanette Hellgren Kotaleski, Kim T. Blackwell,   (2010) Modelling The
+   Molecular Mechanisms of Synaptic Plasticity Using Systems Biology
+   Approaches.  *Nature Reviews Neuroscience*  **11**  239-251
+   [10.1038/nrn2807](http://dx.doi.org/10.1038/nrn2807)
