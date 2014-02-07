@@ -16,6 +16,21 @@ General
 
   http://www.cs.swarthmore.edu/help/vim/variables.html
 
+###Getting help
+
+    Press "F1" or enter :h to open the help dialog.
+
+    * /foo   searches for "foo"
+    * Ctrl-] follows link under the cursor 
+    * Cntl-T go back
+    * Cntl-O or Cntrl-I goes to older and newer locations
+
+    Update docs:
+
+    vim -c 'call pathogen#helptags()|q'
+
+    http://vim.wikia.com/wiki/Learn_to_use_help
+
 ###Split-pane mode
 
     vim -o file1 file2
@@ -141,6 +156,10 @@ Some useful commands for spell check
   as-is.
 
   http://stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim
+
+###Refresh open buffer
+
+    :e
 
 Navigation
 ----------
@@ -311,6 +330,18 @@ To avoid messing up indentation when pasting code, etc in
 
   http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 
+###find and replace word under cursor
+
+    1. Move cursor over word to replace
+    2. Press *
+    3. Enter 'ciw' (change word)
+    4. Type replacement
+    5. Hit escape
+    6. n to go to next word
+    7. . to repeat
+
+    http://vim.wikia.com/wiki/Search_and_replace_the_word_under_the_cursor
+
 ###regex find & replace
 
     # entire doc
@@ -330,6 +361,11 @@ To avoid messing up indentation when pasting code, etc in
 
     < unindent
     > indent
+
+Show mappings
+-------------
+:help index    builtin
+:map / :map!   user-defined
 
 Useful links
 ------------

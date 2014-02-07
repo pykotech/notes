@@ -502,6 +502,13 @@ Edit ~/.local/share/applications/mimeapps.list:
     yaourt esound
     yaourt libpng12
 
+    # FL Studio
+    yaourt lib32-alsa-plugins
+
+###Mei_me issues
+
+    https://bbs.archlinux.org/viewtopic.php?id=168403
+
 Awesome
 -------
 
@@ -542,6 +549,20 @@ Pasting:
 
     Pressing Shift-Insert causes the value of the PRIMARY selection to be 
     inserted too.
+
+Pasting in terminal vs. GUI
+
+    URxvt
+
+        Alt + V         CLIPBOARD
+        Shift + Insert  PRIMARY
+        Middle Mouse    PRIMARY
+
+    Leafpad, etc.
+
+        Cntl + V        CLIPBOARD
+        Shift + Insert  CLIPBOARD
+        Middle Mouse    PRIMARY   (but doesn't always seem to work?)
 
 Solution:
 
